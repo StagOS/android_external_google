@@ -6,8 +6,8 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.ListView;
 
-import com.dirtyunicorns.support.R;
-import com.dirtyunicorns.support.preferences.AppPicker;
+import com.stag.support.R;
+import com.stag.support.preferences.AppPicker;
 
 public class ShortSqueezeCustomApp extends AppPicker {
 

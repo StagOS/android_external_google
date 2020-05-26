@@ -11,7 +11,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 
-import com.android.internal.util.du.ActionUtils;
+import com.android.internal.util.stag.StagUtils;
 import com.android.systemui.Dependency;
 import com.android.systemui.assist.AssistManager;
 
@@ -47,20 +47,20 @@ public class CustomActions extends Action {
             default:
                 break;
             case 1: // Assistant
-                ActionUtils.switchScreenOn(getContext());
+                StagUtils.switchScreenOn(getContext());
                 mAssistManager.startAssist(new Bundle() /* args */);
                 break;
             case 2: // Voice search
                 if (isScreenOn) {
-                    ActionUtils.launchVoiceSearch(getContext());
+                    StagUtils.launchVoiceSearch(getContext());
                 }
                 break;
             case 3: // Camera
-                ActionUtils.switchScreenOn(getContext());
-                ActionUtils.launchCamera(getContext());
+                StagUtils.switchScreenOn(getContext());
+                StagUtils.launchCamera(getContext());
                 break;
             case 4: // Flashlight
-                ActionUtils.toggleCameraFlash();
+                StagUtils.toggleCameraFlash();
                 break;
             case 5: // Application
                 if (isScreenOn) {
@@ -69,45 +69,45 @@ public class CustomActions extends Action {
                 break;
             case 6: // Volume panel
                 if (isScreenOn) {
-                    ActionUtils.toggleVolumePanel(getContext());
+                    StagUtils.toggleVolumePanel(getContext());
                 }
                 break;
             case 7: // Screen off
                 if (isScreenOn) {
-                    ActionUtils.switchScreenOff(getContext());
+                    StagUtils.switchScreenOff(getContext());
                 }
                 break;
             case 8: // Screenshot
                 if (isScreenOn) {
-                    ActionUtils.takeScreenshot(true);
+                    StagUtils.takeScreenshot(true);
                 }
                 break;
             case 9: // Notification panel
                 if (isScreenOn) {
-                    ActionUtils.toggleNotifications();
+                    StagUtils.toggleNotifications();
                 }
                 break;
             case 10: // QS panel
                 if (isScreenOn) {
-                    ActionUtils.toggleQsPanel();
+                    StagUtils.toggleQsPanel();
                 }
                 break;
             case 11: // Clear notifications
-                ActionUtils.clearAllNotifications();
+                StagUtils.clearAllNotifications();
                 break;
             case 12: // Ringer modes
-                ActionUtils.toggleRingerModes(getContext());
+                StagUtils.toggleRingerModes(getContext());
                 break;
             case 13: // Kill app
                 if (isScreenOn) {
-                    ActionUtils.killForegroundApp();
+                    StagUtils.killForegroundApp();
                 }
                 break;
             case 14: // Skip song
-                ActionUtils.sendSystemKeyToStatusBar(KeyEvent.KEYCODE_MEDIA_NEXT);
+                StagUtils.sendSystemKeyToStatusBar(KeyEvent.KEYCODE_MEDIA_NEXT);
                 break;
             case 15: // Previous song
-                ActionUtils.sendSystemKeyToStatusBar(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
+                StagUtils.sendSystemKeyToStatusBar(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
                 break;
         }
     }
